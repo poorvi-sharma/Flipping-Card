@@ -1,0 +1,88 @@
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <style>
+            .cardframe
+            {
+                display: flex;
+                flex-flow: row;
+                align-items: center;
+                justify-content: center;
+
+                -moz-perspective: 300rem;
+                perspective: 700px;
+                perspective: length;
+
+                height: 330px;
+                width: 330px;
+                border: 1px solid red;
+            }
+            .card
+            {
+                height: 300px;
+                width: 300px;
+                display: flex;
+                border: 1px solid;
+                transition: all 0.9s ease;
+
+                  -webkit-backface-visibility: hidden;
+                 backface-visibility: hidden; 
+
+                 position: absolute;
+                /* top: 50%;
+                left: 50%; */
+                transform: translate(-50%, -50%);
+                border-radius: 10px;
+            }
+            .cardb
+            {
+                background-color: #bde0fe;
+                
+               
+                transform: rotateY(180deg);
+            }
+            .cardb_flip
+            {
+                transform: rotateY(0deg);
+            }
+            .cardf
+            {
+                background-color: #ffc8dd;
+                flex: initial;
+                transform: rotateY(360deg);
+            }
+            .cardf_flip
+            {
+                transform: rotateY(180deg);
+            }
+        </style>
+       <script>
+                
+                $(document).ready(function () {
+                    $(".cardframe").hover(
+
+                    function () {
+                        $('.cardb').addClass("cardb_flip");
+                        $('.cardf').addClass("cardf_flip");
+                    },
+                    function () {
+                        $('.cardb').removeClass("cardb_flip");
+                        $('.cardf').removeClass("cardf_flip");
+                    }
+                    );
+                });
+       </script>
+    </head>
+    <body>
+        
+
+            <div class="cardframe">
+                
+                    <div class="cardb card" id="back"> ABCDEFGHIJK</div>
+                    <div class="cardf card"> ABCDEFGHIJK </div>
+            </div>
+            
+        
+    </body>
+</html>
